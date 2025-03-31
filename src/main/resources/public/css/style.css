@@ -18,6 +18,7 @@ h1 {
     color: brown;
 }
 h2 {
+    text-align: center;
     margin-bottom: 5px;
 }
 a {
@@ -48,6 +49,17 @@ hr {
 }
 .btn-md {
     width: 200px;
+}
+
+.icon-sm {
+    width: 32px;
+    height: 32px;
+    transform: translate(-25%, 25%);
+    -ms-transform: translate(-25%, 25%); /* IE 9 */
+    -webkit-transform: translate(-25%, 25%); /* Chrome, Safari, Opera */
+}
+.txt-center {
+    text-align: center;
 }
 /* Layout */
 
@@ -83,9 +95,6 @@ hr {
     flex-direction: row;
     justify-content: center;
 }
-
-/* Tablas */
-
 
 /* Media Queries */
 

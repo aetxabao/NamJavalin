@@ -35,11 +35,23 @@ p {
 .wp10 {
     width: 10% !important;
 }
+.wp20 {
+    width: 20% !important;
+}
 .wp30 {
     width: 30% !important;
 }
+.wp40 {
+    width: 40% !important;
+}
 .wp50 {
     width: 50% !important;
+}
+.wp60 {
+    width: 60% !important;
+}
+.wp70 {
+    width: 70% !important;
 }
 .bg-yellow {
     background-color: yellow !important;

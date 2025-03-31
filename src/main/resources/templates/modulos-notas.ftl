@@ -11,9 +11,27 @@
 <body>
 <div class="main-container">
     <h1>Estadísticas</h1>
-
-        <!-- TODO: Estadísticas Módulos -->
-
+    <table>
+        <thead>
+        <tr>
+            <th>Id.</th>
+            <#assign primerasNotas = mapa?values?first>
+            <#assign tamNotas = primerasNotas?size>
+            <#list 1..tamNotas as i>
+                <th class="wp10">${i}</th>
+            </#list>
+        </thead>
+        <tbody>
+        <#list mapa as modulo, notas>
+            <tr>
+                <th>${modulo}</th>
+                <#list notas as nota>
+                    <td class="txt-center">${nota}</td>
+                </#list>
+            </tr>
+        </#list>
+        </tbody>
+    </table>
     <#include "footer.ftl">
 </div>
 </body>

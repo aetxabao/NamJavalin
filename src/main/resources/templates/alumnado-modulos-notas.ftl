@@ -12,7 +12,27 @@
 <div class="main-container">
     <h1>Resultados</h1>
 
-        <!-- TODO: Resultados Alumnado -->
+    <#list alumnado as amn>
+    <h2>${amn.nombre} ${amn.apellidos}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th class="wp20">Id.</th>
+            <th class="wp70">Módulo</th>
+            <th class="wp10">Nota</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list amn.modulosNotas as mn>
+            <tr>
+                <td>${mn.id}</td>
+                <td>${mn.nombre}</td>
+                <td>${mn.nota}</td>
+            </tr>
+        </#list>
+        </tbody>
+    </table>
+    </#list>
 
     <#include "footer.ftl">
 </div>

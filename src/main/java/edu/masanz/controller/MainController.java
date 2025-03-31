@@ -52,4 +52,5 @@ public class MainController {
         model.put("mapa", mapa);
         context.render("/templates/modulos-notas.ftl", model);
     }
+
 }

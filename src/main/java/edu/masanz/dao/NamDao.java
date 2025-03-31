@@ -2,10 +2,7 @@ package edu.masanz.dao;
 
 import edu.masanz.dto.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class NamDao {
 
@@ -28,7 +25,7 @@ public class NamDao {
             new Nota(1, "DEIN", 7.5),
             new Nota(1, "PMDM", 6.5),
             new Nota(1, "PSEP", 5.5),
-            new Nota(1, "SGEM", 4.5),
+            new Nota(1, "SGEM", 6.5),
             new Nota(2, "ACDA", 7.5),
             new Nota(2, "DEIN", 6.5),
             new Nota(2, "PMDM", 5.5),
@@ -40,10 +37,10 @@ public class NamDao {
             new Nota(3, "PSEP", 3.5),
             new Nota(3, "SGEM", 2.5),
             new Nota(4, "ACDA", 5.5),
-            new Nota(4, "DEIN", 4.5),
-            new Nota(4, "PMDM", 3.5),
-            new Nota(4, "PSEP", 2.5),
-            new Nota(4, "SGEM", 1.5),
+            new Nota(4, "DEIN", 7.5),
+            new Nota(4, "PMDM", 9.5),
+            new Nota(4, "PSEP", 6.5),
+            new Nota(4, "SGEM", 5.0),
             new Nota(5, "ACDA", 4.5),
             new Nota(5, "DEIN", 3.5),
             new Nota(5, "PMDM", 2.5),
@@ -52,7 +49,9 @@ public class NamDao {
     );
 
     public List<Alumno> getAlumnado() {
-        return new ArrayList<>(alumnos.values());
+        List<Alumno> lista = new ArrayList<>(alumnos.values());
+        Collections.sort(lista);
+        return lista;
     }
 
     public List<AlumnoNotaMedia> getAlumnadoNotasMedias() {
@@ -74,6 +73,7 @@ public class NamDao {
             anm.setNotaMedia(suma / contador);
             lista.add(anm);
         }
+        Collections.sort(lista, Comparator.comparing(AlumnoNotaMedia::getNotaMedia).reversed());
         return lista;
     }
 

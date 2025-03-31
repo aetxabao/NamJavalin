@@ -20,9 +20,13 @@
         </tr>
         </thead>
         <tbody>
-
-        <!-- TODO: Listar los alumnos -->
-
+            <#list alumnado as alumno>
+            <tr>
+                <td>${alumno.id}</td>
+                <td>${alumno.nombre}</td>
+                <td>${alumno.apellidos}</td>
+            </tr>
+            </#list>
         </tbody>
     </table>
     <#include "footer.ftl">
